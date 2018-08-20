@@ -3,10 +3,14 @@ pipeline {
         docker { image 'r-base:latest' }
     }
     stages {
-        stage('Test') {
+        stage('Check') {
             steps {
                 sh 'R --version'
-		Rscript tests/test-testthat.R
+            }
+        }
+        stage('Test') {
+            steps {
+                Rscript tests/test-testthat.R
             }
         }
     }

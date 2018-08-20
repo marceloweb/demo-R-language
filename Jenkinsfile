@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'rocker/r-devel:latest' }
+        docker { image 'r-base:latest' }
     }
     stages {
         stage('Check') {
@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'Rscript tests/test-shiny.R'
                 sh 'Rscript tests/test-testthat.R'
             }
         }

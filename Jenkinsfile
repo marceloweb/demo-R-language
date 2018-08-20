@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'r-base:latest' }
+        docker { image 'rocker/r-devel:latest' }
     }
     stages {
         stage('Check') {

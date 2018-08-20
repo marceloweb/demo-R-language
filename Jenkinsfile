@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                Rscript tests/test-testthat.R
+                sh 'Rscript tests/test-testthat.R'
             }
         }
     }

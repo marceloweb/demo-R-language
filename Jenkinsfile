@@ -6,6 +6,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'R --version'
+		Rscript tests/test-testthat.R
             }
         }
     }

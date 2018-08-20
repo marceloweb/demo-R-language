@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'r-base:latest' }
+        docker { image 'marceloweb/r-base:1.0' }
     }
     stages {
         stage('Check') {
@@ -10,7 +10,6 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'Rscript tests/test-shiny.R'
                 sh 'Rscript tests/test-testthat.R'
             }
         }
